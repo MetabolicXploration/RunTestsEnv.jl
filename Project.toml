@@ -1,7 +1,7 @@
 name = "RunTestsEnv"
 uuid = "aeeda050-7d39-4c85-b6eb-65567cadcf4d"
 authors = ["josePereiro <jose.pereiro.personal@gmail.com> and contributors"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
