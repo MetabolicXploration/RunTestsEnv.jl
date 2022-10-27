@@ -1,0 +1,16 @@
+name = "RunTestsEnv"
+uuid = "aeeda050-7d39-4c85-b6eb-65567cadcf4d"
+authors = ["josePereiro <jose.pereiro.personal@gmail.com> and contributors"]
+version = "0.1.1"
+
+[deps]
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
