@@ -19,19 +19,23 @@ function _activate_testenv(runtests_dir)
 
     # merging
     # pkg_man[deps] ⊆ test_man[deps]
-    pkg_deps = get!(pkg_man, "deps", Dict())
-    test_deps = get!(test_man, "deps", Dict())
-    merge!(test_deps, pkg_deps)
-
+    for (k, dat0) in pkg_man
+        dat1 = get!(test_man, k, dat0)
+        if dat0 isa Dict
+            merge!(dat1, dat0)
+        end
+    end
+    
     # write
     _write_toml(test_man_file, test_man)
-
     
     # activate
     Pkg.activate(test_proj_file)
     Pkg.resolve()
     
     # warn
+    pkg_deps = get!(pkg_man, "deps", Dict())
+    test_deps = get!(test_man, "deps", Dict())
     if WARN
         for (pkg, dat0) in pkg_deps
             
